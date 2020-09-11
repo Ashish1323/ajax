@@ -1,0 +1,30 @@
+<img style=  "height:400px;
+  width:400px;
+  allign-item:'center';
+  margin-right:400; " src="https://i.insider.com/5ef54cb61918242cfb4ec653?width=1100&format=jpeg&auto=webp" id="p"> <br>
+
+<button id="b">Muh Mai Lo </button>
+
+<script type="text/javascript">
+	  var XHR= new XMLHttpRequest();
+var b=document.getElementById("b")
+var i=document.getElementById("p")
+
+ 
+
+
+b.onclick= function(){  
+  
+XHR.onreadystatechange= function(){
+	     if(XHR.readyState==4){
+       var l=JSON.parse(XHR.responseText)
+                i.src=l.message
+     }
+   }
+  
+   XHR.open("GET","https://dog.ceo/api/breeds/image/random")
+  XHR.send();
+} 
+  
+// // 
+</script>

@@ -1,0 +1,25 @@
+<p> The Current Price Of Bitcoin Is <span id="loda"> ____</span> </p>
+
+<button id="xy"> Baja Mujhe </button>
+
+
+<script>
+	var button = document.getElementById("xy")
+var xhr= new XMLHttpRequest();
+
+var price = document.getElementById("loda")
+
+
+button.onclick =function(){
+  xhr.onreadystatechange= function(){
+    if(xhr.readyState==4){
+        var l=JSON.parse(xhr.responseText)
+        console.log(l)
+        price.innerHTML=l.bpi.GBP.rate
+    }
+  }
+  
+  xhr.open("GET","https://api.coindesk.com/v1/bpi/currentprice.json")
+  xhr.send();
+}
+</script>
